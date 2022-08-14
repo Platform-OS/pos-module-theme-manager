@@ -1,0 +1,10 @@
+---
+slug: admin/themes/set
+method: post
+layout: modules/admin/application
+---
+{% liquid
+  function _ = 'modules/theme-manager/lib/commands/theme/set', theme: params.theme
+
+  redirect_to '/admin/themes'
+%}
