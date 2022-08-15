@@ -1,0 +1,23 @@
+---
+slug: admin/themes
+layout: modules/admin/application
+---
+{% liquid
+  function themes = 'modules/core/lib/queries/registry/get', type: 'theme'
+  function main_theme = 'modules/theme-manager/lib/queries/theme/get_main'
+%}
+<div>
+  <h3>Select your theme</h3>
+  <form action="/admin/themes/set" method="post">
+    <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}">
+    <input type="hidden" name="_method" value="post" />
+
+    <select name="theme">
+      {% for theme in themes %}
+        <option value="{{ theme.machine_name }}" {% if main_theme == theme.machine_name %} selected {% endif %}>{{ theme.name }}</option>
+      {% endfor %}
+    </select>
+
+    <input type="submit" value="Save"/>
+  </form>
+</div>

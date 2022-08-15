@@ -1,0 +1,17 @@
+{% comment %}
+  Implements hook_module_info.
+{% endcomment %}
+{% parse_json info %}
+{
+  "name": "Theme manager",
+  "machine_name": "theme-manager",
+  "type": "module",
+  "version": "1.0.0",
+  "dependencies": [
+    "core",
+    "admin"
+  ]
+}
+{% endparse_json %}
+
+{% return info %}
