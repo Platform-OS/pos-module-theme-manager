@@ -5,7 +5,7 @@ Implements an admin UI with a theme selector for the [Admin Module](https://gith
 
 ## Usage
 
-Once you have the theme manager module installed in your application it'll provide a standard way for theme modules to register their theme configurations.  
+Once you have the Theme Manager Module installed in your application, it'll provide a standard way for theme modules to register their theme configurations.  
 It also provides a `theme_headscripts` partial for your app to render theme-specific scripts and styles in your layout. It renders the necessary theme context from the currently selected theme:  
 ```
 {% include 'modules/theme-manager/theme_headscripts' %}
