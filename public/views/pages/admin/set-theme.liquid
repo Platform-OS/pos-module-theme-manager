@@ -4,6 +4,9 @@ method: post
 layout: modules/admin/application
 ---
 {% liquid
+  function current_user = 'modules/user/lib/queries/user/current'
+  include 'modules/permission/lib/helpers/can_do_or_unauthorized', requester: current_user, do: 'themes.manage'
+
   function _ = 'modules/theme-manager/lib/commands/theme/set', theme: params.theme
 
   redirect_to '/admin/themes'
