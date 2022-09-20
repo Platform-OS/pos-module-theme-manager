@@ -1,0 +1,17 @@
+{% liquid
+  function theme_variables = 'modules/theme-manager/lib/queries/theme/get_variables'
+%}
+{% capture theme_headscripts %}
+  <style>
+  :root {
+    {% comment %} color variables {% endcomment %}
+    {%- for color in theme_variables.colors -%}
+      --{{color[0]}}: {{color[1]}};
+    {%- endfor -%}
+  }
+  </style>
+  {% comment %} Theme specific head scripts {% endcomment %}
+  {%- if theme_variables.headscripts -%}{{ theme_variables.headscripts }}{%- endif -%}
+{% endcapture %}
+
+{% return theme_headscripts %}
