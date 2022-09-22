@@ -18,3 +18,8 @@ Implements the `hook_permission` hook to use access control in the admin interfa
 Implements the `hook_headscripts` hook to register theme-specific head scripts from the active theme.  
 
 Provides the `hook_theme_variables` hook for theme modules so they can register their own theme config with the necessary design tokens (colors, sizes, fonts) and theme specific scripts / frontend assets. See: [/lib/queries/theme/get_variables.liquid](https://github.com/Platform-OS/pos-module-theme-manager/blob/master/public/views/partials/lib/queries/theme/get_variables.liquid#L2)
+
+### Start developing
+[TBD]
+
+**To create your own theme** please refer to the [Theme Module Starter](https://github.com/Platform-OS/pos-theme-module-template) repository.
