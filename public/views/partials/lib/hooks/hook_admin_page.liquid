@@ -1,0 +1,14 @@
+{% parse_json admin_pages %}
+[
+  {
+    "relative_path": "/admin/themes",
+    "partial": "modules/theme-manager/admin_pages/themes",
+    "menu": {
+      "title": "Themes"
+    },
+    "permission": "themes.manage"
+  }
+]
+{% endparse_json %}
+
+{% return admin_pages %}
