@@ -1,0 +1,11 @@
+{% liquid
+  if name == blank
+    return null
+  endif
+
+  graphql r  = 'modules/theme-manager/theme_settings/search', name: name
+
+  assign results = r.records.results.first.settings
+  hash_assign results['theme'] = r.records.results.first.name
+  return results
+%}

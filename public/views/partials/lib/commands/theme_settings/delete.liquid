@@ -1,0 +1,7 @@
+{% liquid
+  graphql r = 'modules/theme-manager/theme_settings/delete', args: object
+  assign object = r.record
+  hash_assign object['valid'] = true
+
+  return object
+%}

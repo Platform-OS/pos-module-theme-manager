@@ -1,0 +1,229 @@
+{% comment %}
+  Implements hook_theme_variables provided by the Theme Manager Module.
+  Provides the color scheme and other design tokens that define a default theme.
+{% endcomment %}
+
+{% parse_json theme_variables %}
+{
+  "theme": "theme-default",
+  "colors": [
+    {
+      "name": "prominent",
+      "value": "0, 0, 0",
+      "isEditable": false
+    },
+    {
+      "name": "normal",
+      "value": "55, 65, 81",
+      "isEditable": false
+    },
+    {
+      "name": "supplementary",
+      "value": "107, 114, 128",
+      "isEditable": false
+    },
+    {
+      "name": "graphic",
+      "value": "64, 85, 104",
+      "isEditable": false
+    },
+    {
+      "name": "inverted",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "interactive-graphic",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "interactive-hover",
+      "value": "52, 102, 227",
+      "isEditable": false
+    },
+    {
+      "name": "interactive-disabled",
+      "value": "191, 219, 254",
+      "isEditable": false
+    },
+    {
+      "name": "interactive-text",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "colorful",
+      "value": "52, 71, 133",
+      "isEditable": false
+    },
+    {
+      "name": "colorful-hover",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "colorful-foreground",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "colorful-supplementary",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "gradient1-from",
+      "value": "21, 20, 35",
+      "isEditable": false
+    },
+    {
+      "name": "gradient1-to",
+      "value": "52, 71, 133",
+      "isEditable": false
+    },
+    {
+      "name": "gradient2-from",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "gradient2-to",
+      "value": "52, 71, 133",
+      "isEditable": false
+    },
+    {
+      "name": "panel",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "card-shadow",
+      "value": "0, 0, 0, .1",
+      "isEditable": false
+    },
+    {
+      "name": "base",
+      "value": "243, 244, 246",
+      "isEditable": false
+    },
+    {
+      "name": "highlighted",
+      "value": "231, 236, 243",
+      "isEditable": false
+    },
+    {
+      "name": "divider",
+      "value": "226, 232, 240",
+      "isEditable": false
+    },
+    {
+      "name": "button-primary",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "button-primary-hover",
+      "value": "52, 102, 227",
+      "isEditable": false
+    },
+    {
+      "name": "button-primary-foreground",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "button-primary-foreground-hover",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "button-secondary",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "button-secondary-hover",
+      "value": "52, 102, 227",
+      "isEditable": false
+    },
+    {
+      "name": "button-secondary-foreground",
+      "value": "29, 78, 216",
+      "isEditable": false
+    },
+    {
+      "name": "button-secondary-foreground-hover",
+      "value": "52, 102, 227",
+      "isEditable": false
+    },
+    {
+      "name": "button-secondary-background",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "input-border",
+      "value": "107, 114, 128",
+      "isEditable": false
+    },
+    {
+      "name": "input",
+      "value": "255, 255, 255",
+      "isEditable": false
+    },
+    {
+      "name": "input-foreground",
+      "value": "55, 65, 81",
+      "isEditable": false
+    },
+    {
+      "name": "important",
+      "value": "185, 28, 28",
+      "isEditable": false
+    },
+    {
+      "name": "important-hover",
+      "value": "202, 58, 49",
+      "isEditable": false
+    },
+    {
+      "name": "important-disabled",
+      "value": "254, 202, 202",
+      "isEditable": false
+    },
+    {
+      "name": "confirmation",
+      "value": "15, 123, 10",
+      "isEditable": false
+    },
+    {
+      "name": "confirmation-hover",
+      "value": "9, 143, 105",
+      "isEditable": false
+    },
+    {
+      "name": "confirmation-disabled",
+      "value": "187, 221, 221",
+      "isEditable": false
+    },
+    {
+      "name": "warning",
+      "value": "243, 177, 78",
+      "isEditable": false
+    },
+    {
+      "name": "warning-hover",
+      "value": "255, 190, 91",
+      "isEditable": false
+    },
+    {
+      "name": "warning-disabled",
+      "value": "255, 233, 200",
+      "isEditable": false
+    }
+  ]
+}
+{% endparse_json %}
+
+{% return theme_variables %}
