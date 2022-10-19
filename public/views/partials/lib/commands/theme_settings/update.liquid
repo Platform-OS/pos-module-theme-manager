@@ -1,0 +1,9 @@
+{%  liquid
+  function object = 'modules/theme-manager/lib/commands/theme_settings/update/build', object: object, default_settings: default_settings
+
+  graphql r = 'modules/theme-manager/theme_settings/update', args: object
+  assign object = r.record
+  hash_assign object['valid'] = true
+
+  return object
+%}

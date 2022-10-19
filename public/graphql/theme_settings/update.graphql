@@ -1,0 +1,14 @@
+mutation ($name: String!, $settings: String!) {
+  record: records_update_all(
+    table: "modules/theme-manager/theme_settings"
+    filter: { properties: [{ name: "name", value: $name }] }
+    record: {
+      properties: [
+        { name: "name", value: $name }
+        { name: "settings", value: $settings }
+      ]
+    }
+  ) {
+    count
+  }
+}

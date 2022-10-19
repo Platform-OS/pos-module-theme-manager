@@ -1,0 +1,17 @@
+mutation ($name: String!, $settings: String!) {
+  record: record_create(
+    record: {
+      table: "modules/theme-manager/theme_settings"
+      properties: [
+        { name: "name", value: $name }
+        { name: "settings", value: $settings }
+      ]
+    }
+  ) {
+    id
+    created_at
+
+    name: property(name: "name")
+    settings: property_object(name: "settings")
+  }
+}

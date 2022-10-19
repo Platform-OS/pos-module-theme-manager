@@ -1,0 +1,19 @@
+query ($name: String, $per_page: Int = 100, $page: Int = 1) {
+  records(
+    per_page: $per_page
+    page: $page
+    filter: {
+      table: { value: "modules/theme-manager/theme_settings" }
+      properties: [{ name: "name", value: $name }]
+    }
+  ) {
+    total_entries
+    results {
+      id
+      created_at
+      type: table
+      name: property(name: "name")
+      settings: property_object(name: "settings")
+    }
+  }
+}

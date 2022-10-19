@@ -1,0 +1,17 @@
+---
+slug: admin/themes
+method: delete
+---
+{% liquid
+  function current_user = 'modules/user/lib/queries/user/current'
+  include 'modules/permission/lib/helpers/can_do_or_unauthorized', requester: current_user, do: 'themes.manage'
+
+  function default_settings = 'modules/theme-manager/lib/queries/theme/get_variables', theme: context.params.settings.name
+  function existing_theme_settings = 'modules/theme-manager/lib/queries/theme_settings/find', name: context.params.settings.name
+
+  if existing_theme_settings
+    function object = 'modules/theme-manager/lib/commands/theme_settings/delete', object: context.params.settings, default_settings: default_settings
+  endif
+
+  redirect_to '/admin/themes'
+%}

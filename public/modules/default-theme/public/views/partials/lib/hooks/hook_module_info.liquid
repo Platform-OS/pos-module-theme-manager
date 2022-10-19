@@ -1,0 +1,17 @@
+{% comment %}
+  Implements hook_module_info.
+{% endcomment %}
+{% parse_json info %}
+{
+  "name": "Default theme",
+  "machine_name": "theme-default",
+  "type": "theme",
+  "version": "1.0.0",
+  "dependencies": [
+    "core",
+    "permission"
+  ]
+}
+{% endparse_json %}
+
+{% return info %}
