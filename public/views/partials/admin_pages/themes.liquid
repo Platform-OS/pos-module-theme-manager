@@ -82,14 +82,11 @@
     {% if theme_variables.preview %}
     <div class="w-2/3 my-6 border border-slate-200 px-6 py-4 rounded-md">
       <h2 class="text-xl font-bold pb-8">Live preview</h2>
-      <div id="theme-preview" class="text-normal">
-        {% include theme_variables.preview %}
-      </div>
+      <iframe id="theme-preview" src="/_theme_preview" class="w-full min-h-screen"></iframe>
     </div>
     {% endif %}
   </div>
 </div>
-{{ headscripts }}
 <script>
 const colorInputs = document.querySelectorAll('[data-color-input]');
 const preview = document.querySelector('#theme-preview');
@@ -102,7 +99,7 @@ colorInputs.forEach(input => {
     const rgb = e.target.value.match(/[A-Za-z0-9]{2}/g).map(v => parseInt(v, 16)).join(',');
     const rgbInput = document.getElementById(input.getAttribute('data-color-input'));
     const cssPropName = `--${e.target.getAttribute('data-color-input')}`;
-    preview && preview.style.setProperty(cssPropName, rgb);
+    preview && preview.contentWindow.document.body.style.setProperty(cssPropName, rgb);
     rgbInput.value = rgb;
   });
   input.dispatchEvent(new Event('input', {bubbles:true}));
