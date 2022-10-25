@@ -37,3 +37,8 @@ Example for `hook_theme_admin_layout`:
 
 {% return theme_admin_layout %}
 ```
+
+
+### Theme development
+
+**To create your own theme** please refer to the [Theme Module Starter](https://github.com/Platform-OS/pos-theme-module-template) repository.
