@@ -1,23 +1,23 @@
 {% liquid
   function theme_variables_implementations = 'modules/core/lib/commands/hook/fire', hook: 'theme_variables'
-  function main_theme = 'modules/theme-manager/lib/queries/theme/get_main'
+  function main_theme = 'modules/theme-manager/lib/queries/theme/find_main'
 
   assign theme = theme | default: main_theme
 
   if theme_variables_implementations.size == 0
-    log 'No implementation for theme variables in lib/queries/theme/get_theme_variables', type: 'theme_manager'
+    log 'No implementation for theme variables in lib/queries/theme/variables', type: 'theme_manager'
     return nil
   endif
 
   if theme == blank
-    log 'No selected theme in lib/queries/theme/get_theme_variables', type: 'theme_manager'
+    log 'No selected theme in lib/queries/theme/variables', type: 'theme_manager'
     return nil
   endif
 
   assign theme_variables = theme_variables_implementations | array_detect: theme: theme
 
   if theme_variables == blank
-    log 'No theme_variables implementation for selected theme in lib/queries/theme/get_theme_variables', type: 'theme_manager'
+    log 'No theme_variables implementation for selected theme in lib/queries/theme/variables', type: 'theme_manager'
     return nil
   endif
 

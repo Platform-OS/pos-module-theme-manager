@@ -1,6 +1,6 @@
 {% liquid
   function theme_admin_layout_implementations = 'modules/core/lib/commands/hook/fire', hook: 'theme_admin_layout'
-  function main_theme = 'modules/theme-manager/lib/queries/theme/get_main'
+  function main_theme = 'modules/theme-manager/lib/queries/theme/find_main'
 
   if main_theme == blank
     return nil

@@ -9,7 +9,7 @@
   endcomment
   assign theme_name = theme_name | default: context.constants.THEME
   function saved_settings = 'modules/theme-manager/lib/queries/theme_settings/find', name: theme_name
-  function default_settings = 'modules/theme-manager/lib/queries/theme/get_variables', theme: theme_name
+  function default_settings = 'modules/theme-manager/lib/queries/theme/variables', theme: theme_name
   assign theme_settings = saved_settings | default: default_settings
   hash_assign theme_settings['name'] = theme_name
   hash_assign theme_settings['preview'] = default_settings.preview

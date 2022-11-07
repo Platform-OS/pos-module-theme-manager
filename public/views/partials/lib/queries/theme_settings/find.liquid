@@ -3,7 +3,7 @@
     return null
   endif
 
-  graphql r  = 'modules/theme-manager/theme_settings/search', name: name
+  graphql r  = 'modules/theme-manager/theme_settings/find', name: name
 
   assign results = r.records.results.first.settings
   if results
