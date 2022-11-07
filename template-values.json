@@ -1,0 +1,10 @@
+{
+  "name": "Theme manager",
+  "machine_name": "theme-manager",
+  "type": "module",
+  "version": "0.0.0",
+  "dependencies": {
+    "core": "^1.0.0",
+    "permission": "^1.0.0"
+  }
+}
