@@ -1,6 +1,6 @@
 {
   "name": "theme-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Module description",
   "scripts": {
     "version": "(cd ../../ && pos-cli modules version theme-manager -p) && git add template-values.json && auto-changelog -p && git add CHANGELOG.md"
