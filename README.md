@@ -46,5 +46,6 @@ Example for `hook_theme_admin_layout`:
 ## Versioning
 
 ```
+git fetch origin --tags
 npm version major | minor | patch
 ```
