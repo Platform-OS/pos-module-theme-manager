@@ -3,6 +3,17 @@
   Provides the color scheme and other design tokens that define a default theme.
 {% endcomment %}
 
+{% capture theme_headscripts %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pos-fonts-default: "Mulish"
+    }
+  </style>
+{% endcapture %}
+
 {% parse_json theme_variables %}
 {
   "theme": "theme-default",
@@ -222,7 +233,8 @@
       "value": "255, 233, 200",
       "isEditable": false
     }
-  ]
+  ],
+  "headscripts": "{{ theme_headscripts | escape_javascript }}"
 }
 {% endparse_json %}
 
