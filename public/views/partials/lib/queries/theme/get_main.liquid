@@ -1,4 +1,6 @@
 {% liquid
   function main_theme = 'modules/core/lib/queries/variable/get', name: 'THEME'
+
+  assign main_theme = main_theme | default: 'theme-default'
   return main_theme
 %}
