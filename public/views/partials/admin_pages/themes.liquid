@@ -4,25 +4,25 @@
   function theme_variables = 'modules/theme-manager/lib/queries/theme_settings/load', theme_name: main_theme
   function headscripts = 'modules/core/lib/queries/headscripts/get'
   assign has_editable_color = theme_variables.colors | detect: isEditable: true
+  assign theme_options = '[]' | parse_json
+  for theme in themes
+    assign option = null | hash_merge: label: theme.name, value: theme.machine_name
+    assign theme_options = theme_options | add_to_array: option
+  endfor
+  assign theme_select_params = null | hash_merge: value: main_theme, name: 'theme', options: theme_options, placeholder: 'Select from the available themes'
 %}
 
-<div class="p-6 container">
-  <h1 class="text-2xl">Theme manager</h1>
+<div class="container">
+
+  {% theme_render_rc 'components/atoms/heading', content: 'Theme manager', level: 2, classes: 'pb-8' %}
   <div class="py-6">
     <div class="my-6 border border-slate-200 px-6 py-4 rounded-md">
-      <h2 class="text-xl font-bold pb-8">Active theme</h2>
-      <form action="/admin/themes/set" method="post">
+      {% theme_render_rc 'components/atoms/heading', content: 'Current theme', level: 4, classes: 'pb-6' %}
+      <form action="/admin/themes/set" method="post" class="flex gap-6">
         <input type="hidden" name="authenticity_token" value="{{ context.authenticity_token }}">
         <input type="hidden" name="_method" value="post" />
-
-        <select name="theme" class="border-slate-200 px-3 py-1 rounded-md mr-2">
-          <option disabled {% unless main_theme %} selected {% endunless %}>Select from the available themes</option>
-          {% for theme in themes %}
-            <option value="{{ theme.machine_name }}" {% if main_theme == theme.machine_name %} selected {% endif %}>{{ theme.name }}</option>
-          {% endfor %}
-        </select>
-
-        <button type="submit" class="whitespace-nowrap inline-flex items-center justify-center bg-blue-500 hover:bg-blue-700 text-white rounded-md px-3 py-1 text-sm">Switch theme</button>
+        {% theme_render_rc 'components/molecules/select', params: theme_select_params %}
+        {% theme_render_rc 'components/atoms/button', content: 'Switch theme', type: 'submit' %}
       </form>
     </div>
   </div>
