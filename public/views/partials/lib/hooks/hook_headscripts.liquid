@@ -9,6 +9,14 @@
     {%- for color in theme_variables.colors -%}
       --{{color.name}}: {{color.value}};
     {%- endfor -%}
+    {% comment %} border radius variables {% endcomment %}
+    {%- for radius in theme_variables.radiuses -%}
+      --{{radius.name}}: {{radius.value}};
+    {%- endfor -%}
+    {% comment %} border width variables {% endcomment %}
+    {%- for width in theme_variables.width -%}
+      --{{width.name}}: {{width.value}};
+    {%- endfor -%}
   }
   </style>
   {% comment %} Theme specific head scripts {% endcomment %}
