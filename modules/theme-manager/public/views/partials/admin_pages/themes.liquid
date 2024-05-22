@@ -1,8 +1,8 @@
 {% liquid
-  function themes = 'modules/core/lib/queries/registry/get', type: 'theme'
+  function themes = 'modules/core/queries/registry/get', type: 'theme'
   function main_theme = 'modules/theme-manager/lib/queries/theme/get_main'
   function theme_variables = 'modules/theme-manager/lib/queries/theme_settings/load', theme_name: main_theme
-  function headscripts = 'modules/core/lib/queries/headscripts/get'
+  function headscripts = 'modules/core/queries/headscripts/get'
   assign has_editable_color = theme_variables.colors | detect: isEditable: true
   assign theme_options = '[]' | parse_json
   for theme in themes

@@ -1,5 +1,5 @@
 {% liquid
-  function theme_variables_implementations = 'modules/core/lib/commands/hook/fire', hook: 'theme_variables'
+  function theme_variables_implementations = 'modules/core/commands/hook/fire', hook: 'theme_variables'
   function main_theme = 'modules/theme-manager/lib/queries/theme/get_main'
 
   assign theme = theme | default: main_theme
